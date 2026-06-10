@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.4 on linux)" generated="2026-06-10T12:33:55.865019" rpa="false" schemaversion="5">
+<suite id="s1" name="Automacao Estak" source="/home/holy/Documents/Projects/Python/StalkProject/RobotAuto/automacao_estak.robot">
+<test id="s1-t1" name="Executar Integracao Em Massa" line="9">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-06-10T12:33:56.034238" level="INFO">@{LISTA_SINISTROS} = [ 111222333 | 444555666 | 777888999 ]</msg>
+<var>@{LISTA_SINISTROS}</var>
+<arg>111222333</arg>
+<arg>444555666</arg>
+<arg>777888999</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-06-10T12:33:56.033918" elapsed="0.000351"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n---------------------------------</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-10T12:33:56.034593" elapsed="0.000163"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Iniciando processamento do Sinistro: ${sinistro}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-10T12:33:56.034833" elapsed="0.000152"/>
+</kw>
+<kw name="Abrir Portal Da Seguradora">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:33:56.035373" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL_PORTAL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-10T12:33:56.035254" elapsed="1.200485"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2026-06-10T12:33:57.236065" elapsed="0.017624"/>
+</kw>
+<status status="PASS" start="2026-06-10T12:33:56.035081" elapsed="1.218785"/>
+</kw>
+<kw name="Buscar O Sinistro">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:33:57.254681" level="INFO">Typing text '111222333' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${numero}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T12:33:57.254363" elapsed="0.088619"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:33:57.343503" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2026-06-10T12:33:57.656132" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-06-10T12:33:57.656208" level="INFO">Releasing special key ENTER.</msg>
+<arg>name=q</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-06-10T12:33:57.343193" elapsed="0.507076"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-10T12:33:58.850771" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-10T12:33:57.850434" elapsed="1.000483"/>
+</kw>
+<arg>${sinistro}</arg>
+<status status="PASS" start="2026-06-10T12:33:57.254094" elapsed="1.596947"/>
+</kw>
+<kw name="Preencher E Salvar">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:33:59.184645" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia_111222333.png"&gt;&lt;img src="evidencia_111222333.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>evidencia_${numero}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-10T12:33:58.851359" elapsed="0.333404"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Evidência salva para o sinistro ${numero}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-10T12:33:59.184948" elapsed="0.000379"/>
+</kw>
+<arg>${sinistro}</arg>
+<status status="PASS" start="2026-06-10T12:33:58.851170" elapsed="0.334247"/>
+</kw>
+<kw name="Fechar O Navegador">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-10T12:33:59.185819" elapsed="0.061917"/>
+</kw>
+<status status="PASS" start="2026-06-10T12:33:59.185567" elapsed="0.062269"/>
+</kw>
+<var name="${sinistro}">111222333</var>
+<status status="PASS" start="2026-06-10T12:33:56.034524" elapsed="3.213336"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n---------------------------------</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-10T12:33:59.248088" elapsed="0.000231"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Iniciando processamento do Sinistro: ${sinistro}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-10T12:33:59.248399" elapsed="0.000165"/>
+</kw>
+<kw name="Abrir Portal Da Seguradora">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:33:59.248960" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL_PORTAL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-10T12:33:59.248818" elapsed="1.157601"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2026-06-10T12:34:00.406666" elapsed="0.019950"/>
+</kw>
+<status status="PASS" start="2026-06-10T12:33:59.248656" elapsed="1.178101"/>
+</kw>
+<kw name="Buscar O Sinistro">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:34:00.427891" level="INFO">Typing text '444555666' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${numero}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T12:34:00.427426" elapsed="0.081662"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:34:00.509438" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2026-06-10T12:34:00.825613" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-06-10T12:34:00.825701" level="INFO">Releasing special key ENTER.</msg>
+<arg>name=q</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-06-10T12:34:00.509238" elapsed="0.324689"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-10T12:34:01.834586" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-10T12:34:00.834109" elapsed="1.000586"/>
+</kw>
+<arg>${sinistro}</arg>
+<status status="PASS" start="2026-06-10T12:34:00.426996" elapsed="1.407812"/>
+</kw>
+<kw name="Preencher E Salvar">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:34:02.167257" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia_444555666.png"&gt;&lt;img src="evidencia_444555666.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>evidencia_${numero}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-10T12:34:01.835305" elapsed="0.332040"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Evidência salva para o sinistro ${numero}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-10T12:34:02.167476" elapsed="0.000264"/>
+</kw>
+<arg>${sinistro}</arg>
+<status status="PASS" start="2026-06-10T12:34:01.835062" elapsed="0.332738"/>
+</kw>
+<kw name="Fechar O Navegador">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-10T12:34:02.168060" elapsed="0.056573"/>
+</kw>
+<status status="PASS" start="2026-06-10T12:34:02.167907" elapsed="0.056812"/>
+</kw>
+<var name="${sinistro}">444555666</var>
+<status status="PASS" start="2026-06-10T12:33:59.247998" elapsed="2.976745"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n---------------------------------</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-10T12:34:02.224970" elapsed="0.000216"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Iniciando processamento do Sinistro: ${sinistro}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-10T12:34:02.225259" elapsed="0.000148"/>
+</kw>
+<kw name="Abrir Portal Da Seguradora">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:34:02.225762" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL_PORTAL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-10T12:34:02.225648" elapsed="1.125800"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2026-06-10T12:34:03.351606" elapsed="0.027655"/>
+</kw>
+<status status="PASS" start="2026-06-10T12:34:02.225498" elapsed="1.153892"/>
+</kw>
+<kw name="Buscar O Sinistro">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:34:03.380263" level="INFO">Typing text '777888999' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${numero}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T12:34:03.379978" elapsed="0.094548"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:34:03.475061" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2026-06-10T12:34:03.782615" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-06-10T12:34:03.782681" level="INFO">Releasing special key ENTER.</msg>
+<arg>name=q</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-06-10T12:34:03.474740" elapsed="0.313843"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-10T12:34:04.789133" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-10T12:34:03.788769" elapsed="1.000473"/>
+</kw>
+<arg>${sinistro}</arg>
+<status status="PASS" start="2026-06-10T12:34:03.379601" elapsed="1.409735"/>
+</kw>
+<kw name="Preencher E Salvar">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-10T12:34:05.151980" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia_777888999.png"&gt;&lt;img src="evidencia_777888999.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>evidencia_${numero}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-10T12:34:04.789797" elapsed="0.362300"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Evidência salva para o sinistro ${numero}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-10T12:34:05.152266" elapsed="0.000369"/>
+</kw>
+<arg>${sinistro}</arg>
+<status status="PASS" start="2026-06-10T12:34:04.789503" elapsed="0.363217"/>
+</kw>
+<kw name="Fechar O Navegador">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-10T12:34:05.153172" elapsed="0.059829"/>
+</kw>
+<status status="PASS" start="2026-06-10T12:34:05.152899" elapsed="0.060233"/>
+</kw>
+<var name="${sinistro}">777888999</var>
+<status status="PASS" start="2026-06-10T12:34:02.224880" elapsed="2.988300"/>
+</iter>
+<var>${sinistro}</var>
+<value>@{LISTA_SINISTROS}</value>
+<status status="PASS" start="2026-06-10T12:33:56.034367" elapsed="9.178876"/>
+</for>
+<status status="PASS" start="2026-06-10T12:33:56.033067" elapsed="9.180418"/>
+</test>
+<doc>Automação de Integração de Sinistros com Loop.</doc>
+<status status="PASS" start="2026-06-10T12:33:55.865466" elapsed="9.348487"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Automacao Estak" id="s1" pass="1" fail="0" skip="0">Automacao Estak</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
