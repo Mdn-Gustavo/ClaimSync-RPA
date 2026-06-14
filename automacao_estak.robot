@@ -9,12 +9,12 @@ ${URL_PORTAL}         https://www.google.com
 Executar Integracao Em Massa
     # Criamos uma lista com 3 números de sinistros fictícios
     @{LISTA_SINISTROS}    Create List    111222333    444555666    777888999
-    
+
     # O comando FOR vai passar por cada sinistro da lista, um por um
     FOR    ${sinistro}    IN    @{LISTA_SINISTROS}
         Log To Console    \n---------------------------------
         Log To Console    Iniciando processamento do Sinistro: ${sinistro}
-        
+
         # Passos do robô para cada item
         Abrir Portal Da Seguradora
         Buscar O Sinistro    ${sinistro}
@@ -24,7 +24,7 @@ Executar Integracao Em Massa
 
 *** Keywords ***
 Abrir Portal Da Seguradora
-    Open Browser    ${URL_PORTAL}    chrome
+    Open Browser    ${URL_PORTAL}    firefox
     Set Window Size    1200    800
 
 Buscar O Sinistro
